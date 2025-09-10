@@ -17,12 +17,7 @@ img {
     padding: 2px;
     box-shadow: 0 0 30px gray;
 }
-p {
-<<<<<<< HEAD
-    padding: 0;
-=======
-    padding: 10px;
->>>>>>> 1ed9ea533403482beadedcb8ca7f30fc024a0c52
+p {    padding: 10px;
 }
 main{
     max-width: 840px;
@@ -51,8 +46,5 @@ footer{
     margin-top: 15px;
     border-top: 1px solid #000;
     text-align: center;
-<<<<<<< HEAD
+
     }
-=======
-    }
->>>>>>> 1ed9ea533403482beadedcb8ca7f30fc024a0c52
