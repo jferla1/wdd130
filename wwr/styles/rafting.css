@@ -1,0 +1,89 @@
+/* 0) Design option */
+:root{
+  --primary-color:#055a05;      /* forest green headings, accents */
+  --secondary-color:#F4a261;    /* warm sand header/footer bg */
+  --accent1-color:#264653;      /* dark slate blue body text */
+  --accent2-color:#e9c46a;      /* light golden yellow highlight */
+  --heading-font: "Times New Roman", "Georgia", serif;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* 1) Reset & base */
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{
+  font-family:var(--body-font);
+  color:var(--accent1-color);
+  line: height 15px;
+}
+header, main, footer{
+  width:840px;
+  margin:0 auto;
+}
+h1, h2{
+  font-family:var(--heading-font);
+  color:var(--primary-color);
+}
+
+/* 2) Header */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 8px;
+}
+header img{ display:block; height:64px; width:auto; }
+nav ul{ list-style:none; display:flex; gap:16px; }
+nav a{ text-decoration:none; color:var(--primary-color); font-weight:600; }
+nav a[aria-current="page"]{ border-bottom:2px solid var(--accent2-color); }
+
+/* 3) Spacing helpers */
+nav, p, section, article{ 
+    margin:16px;
+    padding:8px;
+}
+
+/* 4) Hero with overlays */
+.hero{
+    position:relative;
+}
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+h1{
+  position:absolute;
+  top:20px;
+  left:0;
+  width:100%;
+  padding:16px;
+  text-align:center;
+  background-color: var(--accent1-color); /* overlay */
+  color:#fff; /* white text - make sre there is enough contrast with the background-color */
+}
+.hero article{
+  position:absolute; bottom:20px; left:20px; right:20px;
+  background:rgba(255,255,255,0.9);
+  padding:16px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.hero article img{
+  float:right; width:125px; height:auto; margin-left:12px; border-radius:6px;
+}
+
+/* 5) Footer */
+footer{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:16px 8px; border-top:1px solid #e6e6e6;
+}
+.socialmedia a{ 
+    text-decoration:none;
+    display:inline-block;
+}
+.socialmedia img{ display:block; width:28px; height:28px; }
+
+/* optional: keep wide hero full-bleed look */
+@media (max-width:900px){
+  header, main, footer{ width:100%; }
+  .hero article{ position:static; margin:16px; }
+}
