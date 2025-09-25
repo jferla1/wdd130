@@ -13,13 +13,13 @@ body {
 }
 
 /* !!!!!!!Class Selectors!!!!!!! */
-/*.box {
+.box {
   margin: 1rem;
   border: 1px solid rgb(0 0 0 / 10%);
   padding: 1rem;
   background-color: #ddd;
-  color: #333;
-}*/
+  color: #000;
+}
 
 /* Layout elements */
 header, footer, .grid {
@@ -46,7 +46,7 @@ aside {
   border: 1px solid rgb(0 0 0 / 0.2);
   padding: 1rem;
   background-color: #eee;
-  color: black;
+  color: #333;
 }
 
 footer {
@@ -57,7 +57,7 @@ footer {
 
 /* Navigation */
 nav {
-  background-color: #2a5d8f;
+  background-color: steelblue;
   padding: 1rem;
   display: flex;
   justify-content: space-evenly;
@@ -65,12 +65,12 @@ nav {
 }
 
 nav a {
-  color: white;
   display: block;
   padding: 0.5rem;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
+  color: whitesmoke;
 }
 
 /* Text elements */
