@@ -1,66 +1,81 @@
-/* 0) Design option */
+/* 0) Design tokens (colors/fonts used site-wide) */
 :root{
-  --primary-color:#055a05;      /* forest green headings, accents */
-  --secondary-color:#F4a261;    /* warm sand header/footer bg */
-  --accent1-color:#264653;      /* dark slate blue body text */
-  --accent2-color:#e9c46a;      /* light golden yellow highlight */
+  --primary-color:#055a05;      /* headings, accents */
+  --secondary-color:#F4a261;    /* optional header/footer bg */
+  --accent1-color:#264653;      /* body text */
+  --accent2-color:#e9c46a;      /* nav active underline */
   --heading-font: "Times New Roman", "Georgia", serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* 1) Reset & base */
+/* 1) Reset & base text */
 *{ margin:0; padding:0; box-sizing:border-box; }
-body{
-  font-family:var(--body-font);
-  color:var(--accent1-color);
+body{ font-family:var(--body-font); color:var(--accent1-color); }
+
+/* 1b) Page width utility used by sections that have .container */
+.container{
+  max-width:1100px;          /* responsive width limit */
+  margin:0 auto;             /* center the block */
+  padding-inline:16px;       /* side breathing room */
 }
-header, main, footer{
-  width:840px;
+
+/* 1c) Shared page wrappers (header/main/footer) use same width pattern */
+.site-header, main, .site-footer{
+  max-width:1100px;
   margin:0 auto;
+  padding-inline:16px;
 }
+
+/* Headings color/font (your choice) */
 h1, h2{
   font-family:var(--heading-font);
   color:var(--primary-color);
 }
 
-/* 2) Header */
-header{
-  display:flex;
+/* 2) HEADER: Grid (logo | nav) per assignment */
+.site-header{
+  display:grid;                         /* grid = big layout */
+  grid-template-columns:auto 1fr;       /* logo auto | nav fills */
   align-items:center;
-  justify-content:space-between;
   gap:16px;
   padding:12px 8px;
 }
-header img{ display:block; height:64px; width:auto; }
-nav ul{ list-style:none; display:flex; gap:16px; }
-nav a{ text-decoration:none; color:var(--primary-color); font-weight:600; }
-nav a[aria-current="page"]{ border-bottom:2px solid var(--accent2-color); }
+.site-header img{ display:block; height:64px; width:auto; }
 
-/* 3) Spacing helpers */
-nav, p, section, article{ 
-    margin:16px;
-    padding:8px;
+/* 2b) NAV: Flex row (right aligned) per assignment */
+.site-nav ul{
+  list-style:none;
+  display:flex;                         /* flex = horizontal links */
+  gap:16px;
+  justify-content:flex-end;             /* push links to the right */
+  align-items:center;
+}
+.site-nav a{
+  text-decoration:none;
+  color:var(--primary-color);
+  font-weight:600;
+}
+.site-nav a[aria-current="page"]{ border-bottom:2px solid var(--accent2-color); }
+
+/* 3) Spacing helpers (content only; avoids shifting header/nav) */
+section, article{
+  margin:16px;
+  padding:8px;
+}
+section p{ margin:0 0 .75rem 0; }       /* simple paragraph rhythm */
+
+/* 4) HERO: overlay title and article card */
+.hero{ position:relative; }
+.hero img{ display:block; width:100%; height:auto; }
+
+/* IMPORTANT: scope the absolute title to the hero only */
+.hero h1{
+  position:absolute; top:20px; left:0; width:100%;
+  padding:16px; text-align:center;
+  background-color:var(--accent1-color); color:#fff;
 }
 
-/* 4) Hero with overlays */
-.hero{
-    position:relative;
-}
-.hero img{
-    display:block;
-    width:100%;
-    height:auto;
-}
-h1{
-  position:absolute;
-  top:20px;
-  left:0;
-  width:100%;
-  padding:16px;
-  text-align:center;
-  background-color: var(--accent1-color); /* overlay */
-  color:#fff; /* white text - make sre there is enough contrast with the background-color */
-}
+/* Article card over hero image */
 .hero article{
   position:absolute; bottom:20px; left:20px; right:20px;
   background:rgba(255,255,255,0.9);
@@ -70,19 +85,61 @@ h1{
   float:right; width:125px; height:auto; margin-left:12px; border-radius:6px;
 }
 
-/* 5) Footer */
-footer{
+/* 5) HISTORY: 3-column grid (text | image | text) per assignment */
+.history h2{ text-align:center; margin-top:16px; }
+.history .history-grid{
+  display:grid;
+  grid-template-columns:1fr minmax(220px,320px) 1fr;
+  gap:16px;
+  align-items:stretch;
+}
+.history .history-text{
+  background:#f5f7f6;
+  padding:12px; border-radius:8px; line-height:1.5;
+}
+.history .history-figure{
+  margin:0; padding:12px; text-align:center;
+  background:var(--secondary-color); color:#000; border-radius:10px;
+}
+.history .history-figure img{ width:100%; height:auto; border-radius:6px; }
+.history .history-figure figcaption{ margin-top:8px; font-weight:600; }
+
+/* 6) ADVENTURES: 5-across figure grid per assignment */
+.adventures h2{ text-align:center; margin-top:16px; }
+.adventures .adventure-row{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(120px, 1fr));
+  gap:12px;
+}
+.adventures figure{
+  margin:0; padding:8px; text-align:center;
+  background:#f8f8f8; border-radius:8px; display:grid; gap:6px;
+}
+.adventures figure img{
+  width:100%; height:140px;          /* consistent tile height */
+  object-fit:cover; border-radius:6px;/* neat crop for mixed photos */
+}
+.adventures figure figcaption{ font-size:.9rem; color:#555; }
+
+/* 7) FOOTER: text left, socials right in a row per assignment */
+.site-footer{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding:16px 8px; border-top:1px solid #e6e6e6;
 }
-.socialmedia a{ 
-    text-decoration:none;
-    display:inline-block;
+.socialmedia{
+  display:flex; gap:10px; align-items:center; justify-content:flex-end;
 }
+.socialmedia a{ text-decoration:none; display:inline-block; }
 .socialmedia img{ display:block; width:28px; height:28px; }
 
-/* optional: keep wide hero full-bleed look */
+/* 8) Responsive rules: stack history, wrap adventures, center nav links */
 @media (max-width:900px){
-  header, main, footer{ width:100%; }
-  .hero article{ position:static; margin:16px; }
+  .hero article{ position:static; margin:16px; } /* move card below image */
+  .history .history-grid{ grid-template-columns:1fr; } /* stack 3->1 */
+  .adventures .adventure-row{ grid-template-columns:repeat(3, 1fr); }
+}
+@media (max-width:560px){
+  .site-header{ grid-template-columns:1fr; }     /* logo above nav */
+  .site-nav ul{ justify-content:center; flex-wrap:wrap; }
+  .adventures .adventure-row{ grid-template-columns:repeat(2, 1fr); }
 }

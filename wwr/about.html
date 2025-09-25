@@ -8,13 +8,15 @@
     <meta name="description"
         content="Discover Rafting Travel while our purpose, history, and why your next adventure belongs on whitewater with us.">
     <meta name="author" content="Josue Ferla">
+    <!-- CSS link: keep path as your current folder structure -->
     <link rel="stylesheet" href="styles/rafting.css">
 </head>
 
 <body>
-    <header>
+    <!-- HEADER: Grid (logo | nav) per assignment -->
+    <header class="site-header">
         <img src="images/z-wwr-blue.jpg" alt="Rafting Travel logo" width="120" height="120">
-        <nav>
+        <nav class="site-nav" aria-label="Primary">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" aria-current="page">About Us</a></li>
@@ -25,6 +27,7 @@
     </header>
 
     <main>
+        <!-- HERO: image with title overlay and an article card -->
         <div class="hero">
             <img src="images/hero.jpg" alt="Rafters paddling through whitewater rapids">
             <h1>Rafting Travel</h1>
@@ -35,30 +38,66 @@
             </article>
         </div>
 
-        <section>
+        <!-- HISTORY: 3-column grid (text | image | text) per assignment -->
+        <section class="history container">
             <h2>History</h2>
-            <p>Founded on a dusty riverbank with one raft and big dreams, we’ve grown into a crew that lives for flow,
-                safety, and stoke. Lorem ipsum…</p>
+            <div class="history-grid">
+                <div class="history-text">
+                    <p>Founded on a dusty riverbank with one raft and big dreams, we’ve grown into a crew that lives for
+                        flow,
+                        safety, and stoke. Lorem ipsum…</p>
+                </div>
+
+                <!-- Replace the placeholder src below with your actual image file -->
+                <figure class="history-figure">
+                    <img src="images/history-center.jpg" alt="Historic rafting photo from our early days">
+                    <figcaption>Our roots on the river</figcaption>
+                </figure>
+
+                <div class="history-text">
+                    <p>Founded on a dusty riverbank with one raft and big dreams, we’ve grown into a crew that lives for
+                        flow,
+                        safety, and stoke. Lorem ipsum…</p>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <!-- ADVENTURES: 5 figures across with captions per assignment -->
+        <section class="adventures container">
             <h2>Adventure Awaits You!</h2>
-            <!-- Wait for more -->
+            <div class="adventure-row">
+                <figure>
+                    <img src="images/adventure-1.jpg" alt="Los Dientes del Diablo rapids" loading="lazy">
+                    <figcaption>Los Dientes del Diablo</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-2.jpg" alt="Big Mallard rapids" loading="lazy">
+                    <figcaption>Big Mallard</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-3.jpg" alt="Half Day Adventure trip" loading="lazy">
+                    <figcaption>Half Day Adventure</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-4.jpg" alt="Boulder Garden rapids" loading="lazy">
+                    <figcaption>Boulder Garden</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-5.jpg" alt="Devil’s Hole rapids" loading="lazy">
+                    <figcaption>Devil’s Hole</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <!-- FOOTER: text left, social icons right per assignment -->
+    <footer class="site-footer container">
         <p>&copy; 2025 Rafting Travel Schedule &mdash; Josue Ferla</p>
         <nav class="socialmedia" aria-label="social media">
-            <a href="https://facebook.com">
-                <img src="images/facebook-bw.svg" alt="Facebook">
-            </a>
-            <a href="https://linkedin.com">
-                <img src="images/linkedin-bw.svg" alt="LinkedIn">
-            </a>
-            <a href="https://instagram.com">
-                <img src="images/instagram-bw.svg" alt="Instagram">
-            </a>
+            <a href="https://www.facebook.com/Sweet.Talkar"><img src="images/facebook-bw.svg" alt="Facebook"></a>
+            <a href="https://www.linkedin.com/in/josue-ferla-1b3b9a8b/"><img src="images/linkedin-bw.svg"
+                    alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/ferla_fin_edu/"><img src="images/instagram-bw.svg" alt="Instagram"></a>
         </nav>
     </footer>
 </body>
