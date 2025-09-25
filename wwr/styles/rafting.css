@@ -34,8 +34,8 @@ h1, h2{
 
 /* 2) HEADER: Grid (logo | nav) per assignment */
 .site-header{
-  display:grid;                         /* grid = big layout */
-  grid-template-columns:auto 1fr;       /* logo auto | nav fills */
+  display:grid; /* grid = big layout */
+  grid-template-columns:auto 1fr; /* logo auto | nav fills */
   align-items:center;
   gap:16px;
   padding:12px 8px;
@@ -45,9 +45,9 @@ h1, h2{
 /* 2b) NAV: Flex row (right aligned) per assignment */
 .site-nav ul{
   list-style:none;
-  display:flex;                         /* flex = horizontal links */
+  display:flex; /* flex = horizontal links */
   gap:16px;
-  justify-content:flex-end;             /* push links to the right */
+  justify-content:flex-end; /* push links to the right */
   align-items:center;
 }
 .site-nav a{
@@ -62,13 +62,13 @@ section, article{
   margin:16px;
   padding:8px;
 }
-section p{ margin:0 0 .75rem 0; }       /* simple paragraph rhythm */
+section p{ margin:0 0 .75rem 0; } /* simple paragraph rhythm */
 
 /* 4) HERO: overlay title and article card */
 .hero{ position:relative; }
 .hero img{ display:block; width:100%; height:auto; }
 
-/* IMPORTANT: scope the absolute title to the hero only */
+/* Scope the absolute title to the hero only */
 .hero h1{
   position:absolute; top:20px; left:0; width:100%;
   padding:16px; text-align:center;
@@ -116,8 +116,8 @@ section p{ margin:0 0 .75rem 0; }       /* simple paragraph rhythm */
   background:#f8f8f8; border-radius:8px; display:grid; gap:6px;
 }
 .adventures figure img{
-  width:100%; height:140px;          /* consistent tile height */
-  object-fit:cover; border-radius:6px;/* neat crop for mixed photos */
+  width:100%; height:140px; /* consistent tile height */
+  object-fit:cover; border-radius:6px; /* neat crop for mixed photos */
 }
 .adventures figure figcaption{ font-size:.9rem; color:#555; }
 
@@ -139,7 +139,7 @@ section p{ margin:0 0 .75rem 0; }       /* simple paragraph rhythm */
   .adventures .adventure-row{ grid-template-columns:repeat(3, 1fr); }
 }
 @media (max-width:560px){
-  .site-header{ grid-template-columns:1fr; }     /* logo above nav */
+  .site-header{ grid-template-columns:1fr; } /* logo above nav */
   .site-nav ul{ justify-content:center; flex-wrap:wrap; }
   .adventures .adventure-row{ grid-template-columns:repeat(2, 1fr); }
 }
