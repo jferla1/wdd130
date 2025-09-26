@@ -1,53 +1,43 @@
-/* 0) Design tokens (colors/fonts used site-wide) */
+/* === Design tokens === */
 :root{
-  --primary-color:#055a05;      /* headings, accents */
-  --secondary-color:#F4a261;    /* optional header/footer bg */
-  --accent1-color:#264653;      /* body text */
-  --accent2-color:#e9c46a;      /* nav active underline */
-  --heading-font: "Times New Roman", "Georgia", serif;
-  --body-font: Arial, Helvetica, sans-serif;
+  --primary-color:#055a05;
+  --secondary-color:#f4a261;
+  --accent1-color:#264653;
+  --accent2-color:#e9c46a;
+  --heading-font:"Times New Roman","Georgia",serif;
+  --body-font:Arial,Helvetica,sans-serif;
 }
 
-/* 1) Reset & base text */
-*{ margin:0; padding:0; box-sizing:border-box; }
-body{ font-family:var(--body-font); color:var(--accent1-color); }
+/* === Reset & base === */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body-font);color:var(--accent1-color)}
 
-/* 1b) Page width utility used by sections that have .container */
-.container{
-  max-width:1100px;          /* responsive width limit */
-  margin:0 auto;             /* center the block */
-  padding-inline:16px;       /* side breathing room */
-}
-
-/* 1c) Shared page wrappers (header/main/footer) use same width pattern */
-.site-header, main, .site-footer{
+/* === Shared width wrapper (de-duped) === */
+:is(.site-header,main,.site-footer,.container){
   max-width:1100px;
   margin:0 auto;
   padding-inline:16px;
 }
 
-/* Headings color/font (your choice) */
-h1, h2{
-  font-family:var(--heading-font);
-  color:var(--primary-color);
-}
+/* === Headings === */
+h1,h2{font-family:var(--heading-font);color:var(--primary-color)}
 
-/* 2) HEADER: Grid (logo | nav) per assignment */
+/* === HEADER (grid: logo | nav) === */
 .site-header{
-  display:grid; /* grid = big layout */
-  grid-template-columns:auto 1fr; /* logo auto | nav fills */
+  display:grid;
+  grid-template-columns:auto 1fr;
   align-items:center;
   gap:16px;
   padding:12px 8px;
 }
-.site-header img{ display:block; height:64px; width:auto; }
+.site-header img{display:block;height:64px;width:auto}
 
-/* 2b) NAV: Flex row (right aligned) per assignment */
+/* === NAV (flex) === */
 .site-nav ul{
   list-style:none;
-  display:flex; /* flex = horizontal links */
+  display:flex;
   gap:16px;
-  justify-content:flex-end; /* push links to the right */
+  justify-content:flex-end;
   align-items:center;
 }
 .site-nav a{
@@ -55,91 +45,81 @@ h1, h2{
   color:var(--primary-color);
   font-weight:600;
 }
-.site-nav a[aria-current="page"]{ border-bottom:2px solid var(--accent2-color); }
+.site-nav a[aria-current="page"]{border-bottom:2px solid var(--accent2-color)}
 
-/* 3) Spacing helpers (content only; avoids shifting header/nav) */
-section, article{
-  margin:16px;
-  padding:8px;
-}
-section p{ margin:0 0 .75rem 0; } /* simple paragraph rhythm */
+/* === Spacing helpers === */
+section,article{margin:16px;padding:8px}
+section p{margin:0 0 .75rem}
 
-/* 4) HERO: overlay title and article card */
-.hero{ position:relative; }
-.hero img{ display:block; width:100%; height:auto; }
-
-/* Scope the absolute title to the hero only */
+/* === HERO === */
+.hero{position:relative}
+.hero img{display:block;width:100%;height:auto}
 .hero h1{
-  position:absolute; top:20px; left:0; width:100%;
-  padding:16px; text-align:center;
-  background-color:var(--accent1-color); color:#fff;
+  position:absolute;inset:20px 0 auto;
+  padding:16px;text-align:center;
+  background:#264653;color:#fff; /* same as var(--accent1-color) */
 }
-
-/* Article card over hero image */
 .hero article{
-  position:absolute; bottom:20px; left:20px; right:20px;
-  background:rgba(255,255,255,0.9);
-  padding:16px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.15);
+  position:absolute;left:20px;right:20px;bottom:20px;
+  background:rgba(255,255,255,.9);
+  padding:16px;border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 .hero article img{
-  float:right; width:125px; height:auto; margin-left:12px; border-radius:6px;
+  float:right;width:125px;height:auto;margin-left:12px;border-radius:6px;
 }
 
-/* 5) HISTORY: 3-column grid (text | image | text) per assignment */
-.history h2{ text-align:center; margin-top:16px; }
-.history .history-grid{
+/* === HISTORY (3-col grid) === */
+.history h2{text-align:center;margin-top:16px}
+.history-grid{
   display:grid;
   grid-template-columns:1fr minmax(220px,320px) 1fr;
-  gap:16px;
-  align-items:stretch;
+  gap:16px;align-items:stretch;
 }
-.history .history-text{
+.history-text{
   background:#f5f7f6;
-  padding:12px; border-radius:8px; line-height:1.5;
+  padding:12px;border-radius:8px;line-height:1.5;
 }
-.history .history-figure{
-  margin:0; padding:12px; text-align:center;
-  background:var(--secondary-color); color:#000; border-radius:10px;
+.history-figure{
+  margin:0;padding:12px;text-align:center;
+  background:var(--secondary-color);color:#000;border-radius:10px;
 }
-.history .history-figure img{ width:100%; height:auto; border-radius:6px; }
-.history .history-figure figcaption{ margin-top:8px; font-weight:600; }
+.history-figure img{width:100%;height:auto;border-radius:6px}
+.history-figure figcaption{margin-top:8px;font-weight:600}
 
-/* 6) ADVENTURES: 5-across figure grid per assignment */
-.adventures h2{ text-align:center; margin-top:16px; }
-.adventures .adventure-row{
+/* === ADVENTURES (5-across) === */
+.adventures h2{text-align:center;margin-top:16px}
+.adventure-row{
   display:grid;
-  grid-template-columns:repeat(5, minmax(120px, 1fr));
+  grid-template-columns:repeat(5,minmax(120px,1fr));
   gap:12px;
 }
 .adventures figure{
-  margin:0; padding:8px; text-align:center;
-  background:#f8f8f8; border-radius:8px; display:grid; gap:6px;
+  margin:0;padding:8px;text-align:center;
+  background:#f8f8f8;border-radius:8px;display:grid;gap:6px;
 }
 .adventures figure img{
-  width:100%; height:140px; /* consistent tile height */
-  object-fit:cover; border-radius:6px; /* neat crop for mixed photos */
+  width:100%;height:140px;object-fit:cover;border-radius:6px;
 }
-.adventures figure figcaption{ font-size:.9rem; color:#555; }
+.adventures figure figcaption{font-size:.9rem;color:#555}
 
-/* 7) FOOTER: text left, socials right in a row per assignment */
+/* === FOOTER === */
 .site-footer{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding:16px 8px; border-top:1px solid #e6e6e6;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:16px 8px;border-top:1px solid #e6e6e6;
 }
-.socialmedia{
-  display:flex; gap:10px; align-items:center; justify-content:flex-end;
-}
-.socialmedia a{ text-decoration:none; display:inline-block; }
-.socialmedia img{ display:block; width:28px; height:28px; }
+.socialmedia{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+.socialmedia a{display:inline-block;text-decoration:none}
+.socialmedia img{display:block;width:28px;height:28px}
 
-/* 8) Responsive rules: stack history, wrap adventures, center nav links */
+/* === Responsive === */
 @media (max-width:900px){
-  .hero article{ position:static; margin:16px; } /* move card below image */
-  .history .history-grid{ grid-template-columns:1fr; } /* stack 3->1 */
-  .adventures .adventure-row{ grid-template-columns:repeat(3, 1fr); }
+  .hero article{position:static;margin:16px}
+  .history-grid{grid-template-columns:1fr}
+  .adventure-row{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:560px){
-  .site-header{ grid-template-columns:1fr; } /* logo above nav */
-  .site-nav ul{ justify-content:center; flex-wrap:wrap; }
-  .adventures .adventure-row{ grid-template-columns:repeat(2, 1fr); }
+  .site-header{grid-template-columns:1fr}
+  .site-nav ul{justify-content:center;flex-wrap:wrap}
+  .adventure-row{grid-template-columns:repeat(2,1fr)}
 }
