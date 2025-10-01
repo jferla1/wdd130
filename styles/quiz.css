@@ -1,0 +1,139 @@
+/* ===========================
+   Basic HTML & CSS Quiz Styles
+   (Simple, one-column layout)
+   =========================== */
+
+/* 1) Colors & fonts we’ll reuse */
+:root{
+  --bg: #f6f7fb;            /* page background */
+  --panel: #ffffff;         /* card background */
+  --ink: #222;              /* main text color */
+  --muted: #555;            /* helper text color */
+  --border: #dcdde3;        /* soft borders */
+  --focus: #5b7cff;         /* focus ring (keyboard users) */
+  --primary: #001489;       /* deep blue submit button */
+  --primary-ink: #ffffff;   /* button text */
+}
+
+/* 2) Reset little quirks so things look tidy everywhere */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+
+/* 3) Page wrapper */
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* easy to read */
+  color: var(--ink);
+  background: var(--bg);                 /* very light gray-blue */
+  line-height: 1.45;
+  padding: 24px;                          /* breathing room around the card */
+}
+
+/* 4) Title */
+h1{
+  max-width: 560px;                       /* keeps the line-length comfy */
+  margin: 0 auto 16px;                    /* centers the title */
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+h1::before{
+  content: "☑";                           /* little checkbox emoji for fun */
+  font-size: 1.1rem;
+}
+
+/* 5) The form “card” */
+form{
+  max-width: 560px;                       /* single column width */
+  margin: 0 auto;                         /* center the card */
+}
+fieldset{
+  border: 1px solid var(--border);        /* soft border like the screenshot */
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 18px;
+}
+legend{
+  font-weight: 700;
+  color: var(--ink);
+  padding: 0 .4rem;
+}
+
+/* 6) Each question block */
+form p{
+  margin: 14px 0;                         /* space between questions */
+}
+
+/* 7) Labels (the question text) */
+label{
+  display: block;                         /* sits on its own line */
+  font-weight: 600;                       /* a bit bold so it reads like a question */
+  margin-bottom: 8px;
+}
+
+/* 8) Inputs: text, number, select, textarea share the same look */
+input[type="text"],
+input[type="number"],
+select,
+textarea{
+  width: 100%;                            /* full width, single column */
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: inherit;                          /* same font as the page */
+  background: #fff;
+  color: var(--ink);
+  outline: none;                          /* we’ll draw our own focus ring */
+}
+
+/* 9) Code sample box inside Q4 (optional) */
+code{
+  background: #2b2b2b;                    /* dark box like the screenshot */
+  color: #eee;
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* 10) Nice keyboard-focus ring for accessibility */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus{
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 25%, transparent);
+}
+
+/* 11) Submit button */
+button[type="submit"]{
+  width: 100%;                            /* wide button across the column */
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: var(--primary);             /* deep blue like the screenshot */
+  color: var(--primary-ink);
+  font-weight: 700;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: transform .02s ease-in-out, opacity .15s;
+  margin-top: 6px;
+}
+button[type="submit"]:hover{ opacity: .95; }
+button[type="submit"]:active{ transform: translateY(1px); }
+
+/* 12) Small screens already look good; add a tiny bump for larger ones */
+@media (min-width: 700px){
+  h1{ font-size: 1.6rem; }
+  fieldset{ padding: 22px; }
+}
+
+/* 13) Helper: make disabled placeholder option look muted */
+select:has(option[disabled]:checked){
+  color: var(--muted);
+}
+
+/* 14) Optional spacing tweaks for very small devices */
+@media (max-width: 380px){
+  body{ padding: 16px; }
+  fieldset{ padding: 14px; }
+}
