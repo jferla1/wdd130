@@ -21,7 +21,7 @@ html,body{ margin:0; padding:0; }
 
 /* 3) Page wrapper */
 body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* easy to read */
+  font-family: system-ui, Garamond, sans-serif; /* easy to read */
   color: var(--ink);
   background: var(--bg);                 /* very light gray-blue */
   line-height: 1.45;
@@ -30,7 +30,7 @@ body{
 
 /* 4) Title */
 h1{
-  max-width: 560px;                       /* keeps the line-length comfy */
+  max-width: 560px;                       /* keeps the line-length moderate */
   margin: 0 auto 16px;                    /* centers the title */
   font-size: 1.4rem;
   display: flex;
