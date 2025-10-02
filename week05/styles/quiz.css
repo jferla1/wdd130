@@ -10,7 +10,7 @@
   --ink: #222;              /* main text color */
   --muted: #555;            /* helper text color */
   --border: #dcdde3;        /* soft borders */
-  --focus: #5b7cff;         /* focus ring (keyboard users) */
+  --focus: #5b7cff;         /* focus ring */
   --primary: #001489;       /* deep blue submit button */
   --primary-ink: #ffffff;   /* button text */
 }
