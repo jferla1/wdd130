@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapid River Rafting | Home</title>
+  <meta name="description"
+    content="Utah whitewater rafting trips with safety-first guides, small groups, and gear included. Book family floats to expert runs." />
+  <link rel="stylesheet" href="rafting.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="trips.html">Trips</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Full-width hero with absolutely positioned overlay (uses your image filename) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-img" src="images/utah-landscape.jpg" alt="Utah canyon river landscape">
+      <div class="overlay">
+        <div class="hero-panel">
+          <h1 id="hero-title">Go beyond the bend — Utah’s best whitewater, safely guided.</h1>
+          <p>From family-friendly floats to expert-level rapids, we run scenic, small-group trips with safety-first
+            guides and flexible dates.</p>
+          <div class="cta-row">
+            <a class="button" href="trips.html">See Trips &amp; Dates</a>
+            <a class="button secondary" href="#newsletter">Get Trip Alerts</a>
+          </div>
+          <p class="small">No spam. One email/month with seasonal discounts and openings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-column grid with images + content (uses your filenames) -->
+    <section class="section" aria-labelledby="why">
+      <h2 id="why">Why raft with us</h2>
+      <p class="lead">Licensed guides, modern gear, and curated itineraries designed for ease and fun.</p>
+
+      <div class="grid">
+        <article class="card span-6">
+          <img src="images/utah-landscape.jpg" alt="Rafting river scene">
+          <h3>Safety-first guiding</h3>
+          <p>Every trip includes a safety briefing, fitted PFDs, helmets, and a seasoned lead guide.</p>
+          <p class="small">Avg. guide tenure: 7+ years</p>
+        </article>
+
+        <article class="card span-6">
+          <img src="images/profile.jpg" alt="Guide and guest smiles">
+          <h3>Small groups</h3>
+          <p>We cap boats to keep things personal—more paddle time, more coaching, more fun.</p>
+          <p class="small">Typical boat: 6–8 guests</p>
+        </article>
+
+        <article class="card span-8">
+          <h3>All gear included</h3>
+          <p>Wetsuits in spring, splash tops in fall. You bring the smile; we’ll handle the rest.</p>
+          <p class="small">Rental value: $45+ included</p>
+        </article>
+
+        <article class="card span-4">
+          <h3>Flexible booking</h3>
+          <p>Free reschedule up to 48 hours prior. Clear refunds posted on every trip.</p>
+          <p class="small">Transparent policies</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter (name + email required) -->
+    <section id="newsletter" class="section">
+      <div class="newsletter" role="region" aria-labelledby="nl">
+        <div>
+          <h2 id="nl">Get our monthly trip newsletter</h2>
+          <p class="small">Be first to know about openings, water levels, and student discounts.</p>
+        </div>
+        <form method="post" action="#" aria-label="Newsletter signup">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" class="input" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" class="input" required />
+          </div>
+          <button class="button" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>©2025 Rapid River Rafting</p>
+  </footer>
+</body>
+
+</html>
